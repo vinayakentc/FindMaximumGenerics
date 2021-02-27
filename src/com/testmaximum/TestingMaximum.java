@@ -15,4 +15,9 @@ public class TestingMaximum {
 	public void testMaximumFloat() {
 		Assert.assertEquals((Float) 7.0f, TestMaximum.testMax(4.0f, 2.0f, 7.0f));
 	}
+	
+	@Test
+	public void testMaximumString() {
+		Assert.assertEquals((String) "kumar", TestMaximum.testMax("aditya", "kumar", "capgemini"));
+	}
 }
