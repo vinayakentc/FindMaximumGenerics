@@ -1,31 +1,24 @@
 package com.testmaximum;
 
-public class TestMaximum {
+import java.util.ArrayList;
+import java.util.Collections;
 
-	public static Integer testMax(Integer a, Integer b, Integer c) {
-		Integer max = a;
-		if (b.compareTo(max) > 0)
-			max = b;
-		if (c.compareTo(max) > 0)
-			max = c;
-		return max;
+public class TestMaximum <E extends Comparable<E>>{
+	
+	ArrayList<E> list = new ArrayList<>();
+	
+	public TestMaximum(E...values) {
+		for(E value : values)
+			this.list.add(value);
 	}
-
-	public static Float testMax(Float a, Float b, Float c) {
-		Float max = a;
-		if (b.compareTo(max) > 0)
-			max = b;
-		if (c.compareTo(max) > 0)
-			max = c;
-		return max;
+	public E max() {
+		return testMax(list);
 	}
-
-	public static String testMax(String a, String b, String c) {
-		String max = a;
-		if (b.compareTo(max) > 0)
-			max = b;
-		if (c.compareTo(max) > 0)
-			max = c;
-		return max;
+	
+	public static <E extends Comparable<E>> E testMax(ArrayList<E> list) {
+		if(list.size() == 0)
+			return null;
+		else
+	        return Collections.max(list);
 	}
 }
