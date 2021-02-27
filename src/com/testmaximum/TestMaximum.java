@@ -2,6 +2,7 @@ package com.testmaximum;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class TestMaximum <E extends Comparable<E>>{
 	
@@ -16,9 +17,14 @@ public class TestMaximum <E extends Comparable<E>>{
 	}
 	
 	public static <E extends Comparable<E>> E testMax(ArrayList<E> list) {
-		if(list.size() == 0)
+		if(list.size() == 0) {
+			System.out.println("The list is empty");
 			return null;
-		else
-	        return Collections.max(list);
+		}
+		else {
+			E e = Collections.max(list);
+			System.out.println("Max of the inputs : "+e);
+	        return e;
+		}
 	}
 }
